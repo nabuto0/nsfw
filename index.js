@@ -425,7 +425,14 @@ case 'timer':
 					} else {
 						mentions(`Pedido recebido, adicionando posição como administrador : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
-					}
+					// Bloqueia na call
+        kill.onIncomingCall(( async (call) => {
+
+            await kill.sendText(call.peerJid, 'Que pena! Chamadas não são suportadas e atrapalham muito! 😊\nTe bloqueei para evitar novas, contate o dono para efetuar o desbloqueio. 👋')
+
+            .then(() => kill.contactBlock(call.peerJid)) // se quiser, pode inserir seu numero acima na sendText com wa.me ou apenas o numero, ou pode mudar pra kill.sendTextWithMentions pra enviar te marcando
+
+        }))                                        }
 					break
 				  case 'wa.me':
 				  case 'wame':
