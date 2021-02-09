@@ -337,6 +337,7 @@ async function starts() {
        /******END OF FUNCTIONS INPUT******/
 			switch(command) {
 				case 'help':
+                                 case 'gostoso':
 				case 'menu':
 					client.sendMessage(from, help(prefix), text)
 					break
@@ -493,6 +494,9 @@ case 'timer':
 						reply('username tidak valid')
 					}
 					break
+                                case 'cmmd':
+		if (args.length < 1) return reply ('exemplo de como se daftar: *daftar (seu nome|sua idade, exemplo: *daftar nabuto|14')
+		break
 				case 'snowwrite':
 					var gh = body.slice(11)
 					var gbl7 = gh.split("|")[0];
